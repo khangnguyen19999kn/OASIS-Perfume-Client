@@ -20,7 +20,7 @@ export default function NomalList({ posts }: NewProcProps) {
 
   return (
     <div>
-      <ul className="flex list-none flex-wrap gap-1 mobile:grid mobile:grid-cols-2 mobile:p-1 ">
+      <ul className="flex list-none flex-wrap gap-1 mobile:grid mobile:grid-cols-2 mobile:p-1 laptop:gap-[3.5rem] ">
         {showItem()}
       </ul>
     </div>
