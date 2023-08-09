@@ -1,4 +1,5 @@
 import { Image } from '@mantine/core'
+import { useViewportSize } from '@mantine/hooks'
 import React from 'react'
 
 import { useStyles } from './carouselThumpStyle'
@@ -10,6 +11,7 @@ type Carousel = {
 }
 export default function CarouselThump({ img, setActive, active }: Carousel) {
   const { classes, cx } = useStyles()
+  const { width } = useViewportSize()
 
   const slides = img.map((item, index) => (
     <div
@@ -36,10 +38,10 @@ export default function CarouselThump({ img, setActive, active }: Carousel) {
     }
   }
   const checkThump = () => {
-    if (img.length < 4) {
+    if (img.length < 4 && width > 1440) {
       return 'justify-center'
     }
-    return ''
+    return 'justify-normal'
   }
   const showThum = img.map((item, numberSlideThump) => (
     <div
@@ -81,7 +83,7 @@ export default function CarouselThump({ img, setActive, active }: Carousel) {
       </div>
       <div
         className={cx(
-          `row mt-5 flex overflow-auto ${checkThump()}`,
+          `row mt-5 flex overflow-auto  ${checkThump()}`,
           classes.thumpSlide
         )}
       >
