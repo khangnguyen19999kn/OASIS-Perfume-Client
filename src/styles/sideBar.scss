@@ -1,0 +1,45 @@
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0;
+  background-color: #333;
+  color: #fff;
+  overflow-x: hidden;
+  animation: slideOut 0.3s ease forwards;
+  opacity: 0;
+}
+
+.sidebar.open {
+  width: 320px;
+  opacity: 1;
+  animation: slideIn 0.3s ease forwards;
+}
+.btn-close{
+  background: none;
+  border: none;
+
+}
+
+.sidebar.close {
+  width: 320px;
+  animation: slideOut 0.3s ease forwards;
+}

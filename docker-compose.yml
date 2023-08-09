@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  frontend:
+    build: .
+    container_name: ndc_frontend
+    environment:
+      - REACT_APP_BASE_URL=http://3.1.107.165:3000
+    ports:
+      - '80:80'

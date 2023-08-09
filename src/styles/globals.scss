@@ -1,0 +1,476 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.cdnfonts.com/css/quentin');
+@import url('https://fonts.cdnfonts.com/css/raleway-5');
+
+@keyframes openMenu {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+.body {
+  overflow-x: hidden;
+}
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+.header-responsive {
+  /* top:0 */
+}
+.disable-item {
+  display: none !important;
+}
+.full-Nav {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 80px;
+}
+.topnav {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  font-weight: 600;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Add an active class to highlight the current page */
+// .active {
+//   background-color: #04aa6d;
+//   color: white;
+// }
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+  height: 100%;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  padding: 14px 15px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover,
+.dropdown:hover .dropbtn {
+  color: #bae9da;
+}
+
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.respon-logo {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .full-Nav {
+    background-color: #9dc7ec;
+  }
+  .topnav {
+    display: block;
+  }
+  .topnav a,
+  .dropdown .dropbtn {
+    display: none;
+  }
+  .respon-logo {
+    display: block;
+    width: 80%;
+    text-align: center;
+  }
+  .topnav {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9dc7ec;
+    opacity: 1;
+    z-index: 100;
+    padding: 15px;
+    animation: openMenu 0.5s linear forwards;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a,
+  .topnav.responsive span {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive span {
+    padding: 0 16px;
+  }
+  .topnav.responsive .darkModeToggle-inNav {
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+  .topnav.responsive .dropdown {
+    float: none;
+  }
+  .topnav.responsive .dropdown-content {
+    position: relative;
+  }
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+.top-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.content-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+.Logo-top-header {
+  width: 8%;
+  text-align: center;
+}
+.search-header {
+  flex: 2;
+}
+
+.cart-header-btn {
+  margin: auto;
+  padding: 6px;
+  width: fit-content;
+  border: 1px solid pink;
+}
+.cart-header-btn-txt {
+  width: 100%;
+  text-align: center;
+  color: #15232d;
+  display: flex;
+  margin-top: 10px;
+}
+.container,
+.tiite-list-new-pro,
+.content-list-new-pro {
+  margin: 10px auto;
+}
+.tiite-list-new-pro,
+.content-list-new-pro {
+  margin: 0px auto;
+}
+.content-list-new-pro {
+  height: 90%;
+}
+.tiite-list-new-pro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-view-all-new-prod {
+  margin-right: 20px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.txt-btn-view-all-new-prod {
+  font-size: 12px;
+  opacity: 0.8;
+  color: black;
+  font-weight: 500;
+}
+.main-title-list-new-prod {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 15px;
+}
+.text-title-list-new-prod {
+  color: #cd3c3c;
+  font-size: 14px;
+}
+.content-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  height: 100%;
+
+  @media (min-width: 320px) and (max-width: 639px) {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    // width: fit-content;
+  }
+}
+.fit-List-new-product {
+  margin-top: 30px;
+}
+.List-item {
+  width: 20%;
+  height: 100%;
+}
+.card-item-list-new {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+}
+@keyframes hoverin {
+  from {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 0px;
+    transform: translateY(0px);
+  }
+  to {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transform: translateY(-5px);
+  }
+}
+.card-item-list-new:hover {
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transform: translateY(-5px);
+  transition-duration: 0.5s;
+
+  /* animation: hoverin 1s linear  ; */
+}
+.card-item-list-new-type {
+  opacity: 0.8;
+  color: #555;
+  font-size: 0.75em;
+}
+.card-item-list-new-name {
+  font-weight: 600;
+  color: #555;
+}
+.card-item-list-new-price {
+  color: #cd3c3c;
+}
+.ml3px {
+  margin-left: 3px;
+}
+.mar-Baner {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* .List-new-product{
+  height: 23.75rem;
+} */
+.banner-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  margin-top: 20px;
+  width: 25%;
+}
+.bor-logo-banner {
+  background-color: #cd3c3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  border-radius: 6px;
+}
+.item-txt-banner {
+  display: flex;
+  flex-direction: column;
+}
+.item-txt-banner {
+  margin-left: 10px;
+}
+.item-txt-banner span {
+  margin: 5px 0;
+}
+.item-txt-banner span:first-child {
+  font-weight: 700;
+}
+@media only screen and (max-width: 1024px) {
+  .container,
+  .tiite-list-new-pro,
+  .content-list-new-pro {
+    width: 75%;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (max-width: 768px) {
+  .container,
+  .tiite-list-new-pro,
+  .content-list-new-pro {
+    width: 100%;
+  }
+  .card-item-list-new-name {
+    font-size: 10px;
+  }
+
+  .banner-item {
+    width: 50%;
+  }
+  .List-item {
+    width: 30%;
+    height: 100%;
+  }
+}
+.search-Side,
+.respon-logo2:first-child,
+.darkModeToggle-inNav {
+  display: none;
+  color: #f2f2f2;
+}
+
+@media only screen and (max-width: 600px) {
+  .top-header,
+  .icon-search-top-header {
+    display: none;
+  }
+  .search-Side,
+  .respon-logo2 {
+    display: none;
+  }
+}
+.img-logo {
+  width: 100%;
+  padding: 2% 5%;
+}
+.Search-Top-side {
+  width: 100%;
+}
+.icon-search-top-header {
+  background-color: #9dc7ec;
+  color: #ddd;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+}
+.textLogo {
+  position: relative;
+  &:after {
+    content: 'Pragrance';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 15px;
+    left: 0px;
+  }
+}
+.loader-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: 	#e1f0eb;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+
+}
+
+.loader-container-done {
+  opacity: 0;
+  overflow: auto;
+  visibility: hidden;
+}
+
+.loader-logo {
+  animation: upDown 1s linear infinite;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

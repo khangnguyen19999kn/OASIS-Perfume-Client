@@ -1,0 +1,56 @@
+image: atlassian/default-image:3
+clone:
+  depth: full    # SonarCloud scanner needs the full history to assign issues properly
+definitions:
+  services:
+    docker:
+      memory: 1024
+    docker-with-large-memory:
+      memory: 7168
+      type: docker
+  caches:
+    sonar: ~/.sonar/cache  # Caching SonarCloud artifacts will speed up your build
+pipelines:
+  branches:
+    dev:
+      - parallel:
+        - step:
+            size: 2x # Total memory is 8GB
+            caches:
+              - sonar
+            image: node:18
+            name: 'Test run sonar cloud'
+            script:
+              - echo "Testing..."
+              - pipe: sonarsource/sonarcloud-scan:1.4.0
+                variables:
+                  SONAR_TOKEN: ${SONAR_TOKEN}
+            services:
+              - docker-with-large-memory
+  pull-requests:
+    '**':
+      - step:
+          size: 2x # Total memory is 8GB
+          caches:
+            - sonar
+          image: node:18
+          name: 'Test run test cases'
+          script:
+            - echo "Testing..."
+            - pipe: sonarsource/sonarcloud-scan:1.4.0
+              variables:
+                SONAR_TOKEN: ${SONAR_TOKEN}
+      - step:
+          image: node:18
+          name: 'Build test'
+          caches:
+            - node
+          script:
+            - echo "Build in progress ..."
+            - yarn
+            - yarn build
+          artifacts:
+            download: true
+            paths:
+              - dist/**
+
