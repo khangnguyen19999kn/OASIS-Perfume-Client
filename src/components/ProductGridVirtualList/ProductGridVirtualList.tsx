@@ -1,3 +1,4 @@
+import { useViewportSize } from '@mantine/hooks'
 import { useVirtualizer, useWindowVirtualizer } from '@tanstack/react-virtual'
 import React, { useEffect, useRef } from 'react'
 
@@ -11,12 +12,13 @@ function ProductGridVirtualList({ posts }: NewProcProps) {
       array.slice(i * size, i * size + size)
     )
   }
+  const { width } = useViewportSize()
 
-  const twoDimensionalArray: TypeOfData[][] = chunkedArray(posts, 5) ?? []
+  const twoDimensionalArray: TypeOfData[][] =
+    chunkedArray(posts, width < 1920 ? 4 : 5) ?? []
 
   const parentRef = useRef<HTMLDivElement | null>(null)
   const parentOffsetRef = useRef(0)
-
   useEffect(() => {
     parentOffsetRef.current = parentRef.current?.offsetTop ?? 0
   }, [])
@@ -24,7 +26,7 @@ function ProductGridVirtualList({ posts }: NewProcProps) {
   const virtualizer = useWindowVirtualizer({
     count: twoDimensionalArray.length,
     estimateSize: () => 350,
-    overscan: 5,
+    overscan: 4,
     scrollMargin: parentOffsetRef.current
   })
 
@@ -33,7 +35,7 @@ function ProductGridVirtualList({ posts }: NewProcProps) {
     count: twoDimensionalArray[0]?.length ?? 0,
     getScrollElement: () => parentRef.current,
     estimateSize: () => 350,
-    overscan: 5
+    overscan: 4
   })
   const columnItems = columnVirtualizer.getVirtualItems()
 

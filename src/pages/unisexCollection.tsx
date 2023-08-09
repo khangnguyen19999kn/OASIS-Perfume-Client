@@ -13,7 +13,7 @@ export default function unisexCollection({ posts, brands }: StorePageProps) {
         <meta name="description" content="Fragrance" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="desktop:mx-auto desktop:w-[55%]">
+      <div className="laptop:mx-auto laptop:w-[80%] desktop:mx-auto desktop:w-[75%] bigDesktop:w-[55%]">
         <StorePage posts={posts} brands={brands} type="unisex" />
       </div>
     </>
