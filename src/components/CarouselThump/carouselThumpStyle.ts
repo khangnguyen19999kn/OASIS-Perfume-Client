@@ -3,8 +3,7 @@ import { createStyles } from '@mantine/core'
 export const useStyles = createStyles(() => ({
   mainImg: {
     width: '100%!important',
-    height: 'fit-content!important',
-
+    height: 'fit-content!important'
   },
   thumpSlide: {
     '&::-webkit-scrollbar': {
