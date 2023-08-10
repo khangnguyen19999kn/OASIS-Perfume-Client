@@ -209,7 +209,7 @@ export default function CheckOutPage() {
       <Modal opened={opened} onClose={close} title="Authentication">
         <Text ta="center">Vui lòng nhập mã xác nhận</Text>
         <Text ta="center">
-          {`Mã xác nhận đã được gửi tới số ${form.values.phone}`}
+          {`Mã xác nhận đã được gửi tới mail ${form.values.email}`}
         </Text>
         <TextInput
           className="mt-3"

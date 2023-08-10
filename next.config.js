@@ -12,6 +12,6 @@ module.exports = (phase, { defaultConfig }) => {
 }
 module.exports = {
   images: {
-    domains: ['chuanperfume.com', 'localhost']
+    domains: ['chuanperfume.com', 'localhost', 'res.cloudinary.com']
   }
 }
