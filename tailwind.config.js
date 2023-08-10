@@ -43,10 +43,10 @@ module.exports = {
         mobile: { min: '320px', max: '639px' },
         // => @media (min-width: 320px) { ... }
 
-        tablet: '640px',
+        tablet: { min: '640px', max: '1279px' },
         // => @media (min-width: 640px) { ... }
 
-        laptop: { min: '1439px', max: '1919px' },
+        laptop: { min: '1279px', max: '1919px' },
         // => @media (min-width: 1024px) { ... }
 
         desktop: '1920px',

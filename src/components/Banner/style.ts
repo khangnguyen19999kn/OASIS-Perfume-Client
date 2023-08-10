@@ -72,6 +72,12 @@ export const useStyles = createStyles(
       fontFamily: "'Quentin', sans-serif",
       '@media (max-width: 639px)': {
         fontSize: '50px'
+      },
+      '@media (min-width: 1279px) ': {
+        fontSize: '50px'
+      },
+      '@media (min-width: 640px)': {
+        fontSize: '50px'
       }
     }
   })

@@ -15,7 +15,7 @@ export default function BestSellsProduct({ posts }: NewProcProps) {
         <Text className={classes.tittle}>Best product</Text>
         <Text className={classes.textContentTittle}>BEST SELLERS PRODUCT</Text>
       </div>
-      <div className=" m-[auto] mt-[30px] w-[60%] mobile:w-[52%] ">
+      <div className=" m-[auto] mt-[30px] w-[60%] mobile:w-[52%] tablet:w-[75%] laptop:w-[65%] ">
         <ListItem posts={posts} />
         <div className="mt-[30px] ">
           <ButtonExploreMore url="/store" />

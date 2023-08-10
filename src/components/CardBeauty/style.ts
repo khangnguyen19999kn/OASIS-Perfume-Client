@@ -27,7 +27,8 @@ export const useStyles = createStyles(
       },
       '@media (max-width: 768px)': {
         width: '90%',
-        marginBottom: '10px'
+        marginBottom: '10px',
+        marginRight: '10px'
       }
     },
     imgCardBeautyBlog: {

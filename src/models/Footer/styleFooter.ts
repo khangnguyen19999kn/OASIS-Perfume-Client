@@ -22,6 +22,12 @@ export const useStyles = createStyles(() => ({
       width: '90%',
       // flexDirection: 'column',
       height: '100%'
+    },
+    '@media (min-width: 1279px)': {
+      width: '80%'
+    },
+    '@media (min-width: 767px)': {
+      width: '80%'
     }
   },
   logoContact: {

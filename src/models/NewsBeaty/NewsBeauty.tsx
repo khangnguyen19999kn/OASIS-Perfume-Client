@@ -29,7 +29,7 @@ export default function NewsBeauty({ blog }: TypeBlogList) {
         <Text className={classes.tittle}>News & Articles</Text>
         <Text className={classes.textContentTittle}>OUR BEAUTY BLOG</Text>
       </div>
-      <div className=" m-[auto] mt-[30px] w-[60%] mobile:w-full ">
+      <div className=" m-[auto] mt-[30px] w-[60%] mobile:w-full tablet:w-full laptop:w-full">
         <div className="flex justify-around mobile:flex-col mobile:items-center ">
           {showCardBeauty()}
         </div>

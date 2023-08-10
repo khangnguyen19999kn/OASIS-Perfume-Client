@@ -15,6 +15,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import ShoppingCart from '@/components/ShoppingCart/ShoppingCart'
+import BrandSection from '@/models/BrandSection/BrandSection'
 import Footer from '@/models/Footer/Footer'
 import { CartProvider } from '@/Provider/CartProvider'
 import Logo from '@/public/assets/imageGlobal/LogoVer2.png'
@@ -88,9 +89,10 @@ export default function App({ Component, pageProps }: AppProps) {
             >
               <Component {...pageProps} />
             </div>
-            <div className="sticky bottom-5 z-10 float-right mr-[20px] w-[fit-content] rounded  bg-[#cce6e5]">
+            <div className="sticky bottom-5 z-10 float-right mr-[20px] w-[fit-content] rounded  bg-[#cce6e5] mobile:visible laptop:invisible desktop:invisible">
               <ShoppingCart />
             </div>
+
             <div className="z-1 fixed bottom-0 w-full">
               <Footer />
             </div>
