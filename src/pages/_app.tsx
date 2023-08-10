@@ -15,7 +15,6 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import ShoppingCart from '@/components/ShoppingCart/ShoppingCart'
-import BrandSection from '@/models/BrandSection/BrandSection'
 import Footer from '@/models/Footer/Footer'
 import { CartProvider } from '@/Provider/CartProvider'
 import Logo from '@/public/assets/imageGlobal/LogoVer2.png'
