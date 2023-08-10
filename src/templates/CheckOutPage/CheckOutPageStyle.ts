@@ -30,6 +30,10 @@ export const useStyles = createStyles(() => ({
   },
   cartSide: {
     height: '300px',
+    '@media (max-width: 639px)': {
+      height: '250px',
+      marginBottom: '20px'
+    },
     overflow: 'auto',
     '&::-webkit-scrollbar': {
       width: '10px',
@@ -38,7 +42,7 @@ export const useStyles = createStyles(() => ({
     },
     '&::-webkit-scrollbar-thumb': {
       backgroundImage:
-        '-webkit-gradient(linear,left bottom,left top,color-stop(0.44, rgb(122,153,217)),color-stop(0.72, rgb(73,125,189)),color-stop(0.86, rgb(28,58,148)))',
+        '-webkit-gradient(linear,left bottom,left top,color-stop(0.44, #7a99d9),color-stop(0.72, #497dbd),color-stop(0.86, #1c3a94))',
       borderRadius: '10px'
     },
     '&::-webkit-scrollbar-track': {

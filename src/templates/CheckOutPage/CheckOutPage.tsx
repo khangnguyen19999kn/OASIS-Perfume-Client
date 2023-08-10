@@ -230,7 +230,7 @@ export default function CheckOutPage() {
       <div className="flex h-[200px] w-full items-center justify-center bg-[#f6f6f6] mobile:h-[100px]">
         <h1 className={classes.title}>Check out</h1>
       </div>
-      <div className="m-[auto] w-1/2 p-5">
+      <div className="m-[auto] w-1/2 p-5 mobile:w-full">
         <div className={classes.cartSide}>{showCartItems()}</div>
         <form onSubmit={form.onSubmit(submitForm)}>
           <Text className={classes.subtitle}>Thông tin khách hàng</Text>
