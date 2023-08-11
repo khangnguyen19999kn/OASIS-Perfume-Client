@@ -57,7 +57,7 @@ export default function Navbar({ tog, setTog }: ActiveResponsive) {
   }
   return (
     <div className={cx('full-Nav', classes.fullNav)} ref={ref}>
-      <div className="relative flex w-1/6 justify-center mobile:hidden">
+      <div className="relative flex w-1/6 justify-center mobile:hidden tablet:w-[10%]">
         <div onMouseDown={handleOpenSidebar}>
           <IconBook
             className={cx(
@@ -151,22 +151,24 @@ export default function Navbar({ tog, setTog }: ActiveResponsive) {
           Contact
         </Link>
       </div>
-      <div className="w-1/6">
+      <div className="w-1/6 tablet:invisible tablet:w-0">
         <TopHeader />
       </div>
-      <div className="absolute right-[25px] top-[20px] z-[100]">
-        <button
-          className="icon desktop:hidden"
-          type="button"
-          onClick={e => {
-            toogle()
-            e.preventDefault()
-          }}
-        >
-          <a className={classes.textTopNav} href="#">
-            {tog === 'disable' ? '☰' : 'X'}
-          </a>
-        </button>
+      <div className="relative h-[50px] w-[50px] tablet:invisible tablet:w-0">
+        <div className="absolute right-5 top-3">
+          <button
+            className="icon laptop:hidden desktop:hidden "
+            type="button"
+            onClick={e => {
+              toogle()
+              e.preventDefault()
+            }}
+          >
+            <a className={classes.textTopNav} href="#">
+              {tog === 'disable' ? '☰' : 'X'}
+            </a>
+          </button>
+        </div>
       </div>
     </div>
   )

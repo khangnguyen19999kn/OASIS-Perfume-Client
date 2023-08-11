@@ -58,15 +58,15 @@ export default function CarouselComponet() {
             <div
               className={cx(
                 activeSlide === 0 ? classes.grpContentSlide1 : '',
-                'absolute left-[50%] top-[30%] w-[650px] mobile:w-full mobile:top-[10px] mobile:left-[15px] p-3 mobile:z-10'
+                'absolute left-[40%] top-[30%] tablet:w-[500px] w-[650px] mobile:w-full mobile:top-[10px] mobile:left-[15px] p-3 mobile:z-10'
               )}
             >
               <div>
-                <Text className="font-[Raleway, sans-serif] text-[64px] font-extralight leading-[18px] mobile:text-[24px]">
+                <Text className="font-[Raleway, sans-serif] text-[64px] font-extralight leading-[18px] mobile:text-[24px] tablet:text-[40px]">
                   Fragrance Journey
                 </Text>
               </div>
-              <div className="mt-[45px] w-[fit-content] pl-3 text-[#616161] mobile:mt-4 mobile:w-full mobile:pl-0">
+              <div className="mt-[45px] w-[fit-content] pl-3 text-[#616161] mobile:mt-4 mobile:w-full mobile:pl-0 tablet:mt-[20px] tablet:p-0">
                 <Text>
                   Welcome to OASIS Fragrance, your ultimate destination for
                   exquisite fragrances. Indulge in the world of scents and
@@ -101,7 +101,7 @@ export default function CarouselComponet() {
             <div
               className={cx(
                 activeSlide === 1 ? classes.grpContentSlide2 : '',
-                'absolute left-[25%] top-[30%] w-[650px] mobile:w-full mobile:top-[20px] mobile:left-[15px] p-3 mobile:z-10'
+                'absolute laptop:left-[10%] laptop:top-[35%] left-[40%] top-[25%] tablet:w-[500px] w-[650px] mobile:w-full mobile:top-[10px] mobile:left-[15px] p-3 mobile:z-10 bigDesktop:left-[25%] bigDesktop:top-[30%]'
               )}
             >
               <div>
@@ -109,7 +109,7 @@ export default function CarouselComponet() {
                   For Your Charm
                 </Text>
               </div>
-              <div className="mt-[45px] w-2/3 pl-3 text-[#616161] mobile:mt-3 mobile:w-full mobile:pl-0">
+              <div className="mt-[45px] w-2/3 pl-3 text-[#616161] mobile:mt-3 mobile:w-full mobile:pl-0 bigDesktop:text-[30px]">
                 <Text>
                   Electric ray demoiselle squeaker unicorn fish Kafue pike bango
                   temperate ocean-bass, yellow bass coffinfish yellowfin

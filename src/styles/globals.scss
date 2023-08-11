@@ -38,7 +38,7 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
-  width: 100%;
+  flex: 1;
   align-items: center;
 }
 
@@ -50,7 +50,10 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 25px;
+  @media (min-width: 1279px) and (max-width: 1919px){
+    font-size: 20px;
+  }
 }
 
 /* Add an active class to highlight the current page */
@@ -73,7 +76,7 @@
 /* Style the dropdown button to fit inside the topnav */
 .dropdown .dropbtn {
   height: 100%;
-  font-size: 17px;
+  font-size: 25px;
   border: none;
   outline: none;
   font-weight: 600;
@@ -81,6 +84,9 @@
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  @media (min-width: 1279px) and (max-width: 1919px){
+    font-size: 20px;
+  }
 }
 
 /* Style the dropdown content (hidden by default) */
@@ -206,9 +212,14 @@
   width: 50%;
 }
 .Logo-top-header {
-  width: 8%;
+  width: 20%;
   text-align: center;
-}
+  @media (min-width: 640px) and (max-width: 1279px) {
+    width: 30%;
+  }
+
+  }
+
 .search-header {
   flex: 2;
 }

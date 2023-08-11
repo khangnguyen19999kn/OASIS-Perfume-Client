@@ -42,8 +42,11 @@ export const useStyles = createStyles(() => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     position: 'relative',
-    '@media (max-width: 768px)': {
+    '@media (min-width: 320px) and (max-width: 639px)': {
       height: '250px'
+    },
+    '@media (min-width: 640px) and (max-width: 1279px)': {
+      height: '350px'
     }
   },
   slide2: {
@@ -54,8 +57,11 @@ export const useStyles = createStyles(() => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     position: 'relative',
-    '@media (max-width: 768px)': {
+    '@media (min-width: 320px) and (max-width: 639px)': {
       height: '250px'
+    },
+    '@media (min-width: 640px) and (max-width: 1279px)': {
+      height: '350px'
     }
   },
   wrapperimg1Slide2: {
@@ -77,7 +83,7 @@ export const useStyles = createStyles(() => ({
     height: '100%'
   },
   grpImgSlide1: {
-    '@media (min-width: 1280px)': {
+    '@media (min-width: 640px)': {
       animation: `${slideIn1} 2s ease-in-out`
     },
     position: 'absolute',
@@ -85,19 +91,33 @@ export const useStyles = createStyles(() => ({
     left: '5%',
     width: '800px',
     height: '700px',
-    '@media (max-width: 768px)': {
-      height: '200px'
+    '@media (min-width: 640px) and (max-width: 1279px)': {
+      height: '300px',
+      width: '300px',
+      left: '0'
+    },
+    '@media (min-width: 1279px) and (max-width: 1919px)': {
+      left: '-15%'
+    },
+    '@media (min-width: 1920px)': {
+      left: '-20%'
     }
   },
   grpImgSlide2: {
-    '@media (min-width: 1280px)': {
+    '@media (min-width: 640px)': {
       animation: `${slideIn2} 2s ease-in-out`
     },
     position: 'absolute',
     bottom: '0',
     right: '0',
     width: '800px',
-    height: '700px'
+    height: '700px',
+    '@media (min-width: 640px) and (max-width: 1279px)': {
+      height: '300px',
+      width: '300px',
+      left: '0'
+    },
+ 
   },
   grpContentSlide1: {
     '@media (min-width: 1280px)': {

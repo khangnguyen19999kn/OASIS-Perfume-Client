@@ -70,13 +70,10 @@ export const useStyles = createStyles(
       fontWeight: 400,
       color: '#33999487',
       fontFamily: "'Quentin', sans-serif",
-      '@media (max-width: 639px)': {
-        fontSize: '50px'
+      '@media (min-width: 640px) and (max-width: 1279px)': {
+        fontSize: '45px'
       },
-      '@media (min-width: 1279px) ': {
-        fontSize: '50px'
-      },
-      '@media (min-width: 640px)': {
+      '@media (min-width: 1280px) ': {
         fontSize: '50px'
       }
     }

@@ -11,6 +11,10 @@ export const useStyles = createStyles(() => ({
     '@media (max-width: 639px)': {
       overflowX: 'auto',
       justifyContent: 'unset'
+    },
+    '@media (min-width: 640px) and (max-width: 1279px)': {
+      overflowX: 'auto',
+      justifyContent: 'unset'
     }
   },
 
@@ -24,6 +28,9 @@ export const useStyles = createStyles(() => ({
       transition: 'fill 0.5s'
     },
     '@media (max-width: 639px)': {
+      marginRight: '30px'
+    },
+    '@media (min-width: 640px) and (max-width: 1279px)': {
       marginRight: '30px'
     }
   }
