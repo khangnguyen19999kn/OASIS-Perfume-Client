@@ -116,8 +116,7 @@ export const useStyles = createStyles(() => ({
       height: '300px',
       width: '300px',
       left: '0'
-    },
- 
+    }
   },
   grpContentSlide1: {
     '@media (min-width: 1280px)': {
