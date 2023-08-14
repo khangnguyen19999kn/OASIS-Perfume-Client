@@ -154,8 +154,12 @@ export default function Navbar({ tog, setTog }: ActiveResponsive) {
       <div className="w-1/6 tablet:invisible tablet:w-0">
         <TopHeader />
       </div>
-      <div className="relative h-[50px] w-[50px] tablet:invisible tablet:w-0">
-        <div className="absolute right-5 top-3">
+      <div className="relative z-[101] h-[50px] w-[50px] tablet:invisible tablet:w-0">
+        <div
+          className={`absolute top-3 ${
+            tog === 'disable' ? 'right-5' : 'right-[-15.75rem]'
+          }`}
+        >
           <button
             className="icon laptop:hidden desktop:hidden "
             type="button"
