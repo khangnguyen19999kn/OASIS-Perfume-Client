@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import ButtonBlob from '@/components/ButtonBlob'
+import Chat from '@/components/Chat/Chat'
 import Contact from '@/components/Contact'
 import SocialNetworkGroup from '@/components/SocialNetworkGroup'
 import Logo from '@/public/assets/imageGlobal/LogoVer2.png'
@@ -13,6 +14,7 @@ export default function Footer() {
   const { classes } = useStyles()
   return (
     <div>
+      <Chat />
       <div className={classes.containerFooter}>
         <div className={classes.mainFooter}>
           <div>

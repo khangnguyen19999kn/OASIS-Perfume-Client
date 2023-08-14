@@ -41,7 +41,7 @@ export default function CartPage() {
         <h1 className={classes.title}>Shopping Bag</h1>
         <h1 className={classes.title}>({context?.totalItemInCart})</h1>
       </div>
-      <div className=" m-[auto] w-[60%] mobile:w-full">
+      <div className=" m-[auto] w-[60%] mobile:w-full laptop:w-[80%]">
         <div className="flex justify-between mobile:flex-col">
           {/* Cart Item  */}
           <div className="w-[70%] mobile:w-full">{showCartItems()}</div>

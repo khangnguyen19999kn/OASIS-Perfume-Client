@@ -15,7 +15,7 @@ export default function test({ posts }: DetailPro) {
 
 export async function getStaticProps() {
   const myDataRes = await fetch(
-    'https://server-oasis-perfume.onrender.com/api/v1/product/6461b2c694c2824b6d0b5100'
+    'https://server-oasis-perfume.onrender.com/api/v1/product/6408467c93b91d61716a9bdf'
   )
   const posts = await myDataRes.json()
 

@@ -82,7 +82,7 @@ export default function DetailPage({ posts }: DetailPro) {
   return (
     <>
       <div className="flex items-center justify-center">
-        <div className="flex w-[50%] justify-around p-5 mobile:w-full mobile:flex-col mobile:justify-normal">
+        <div className="flex w-[50%] justify-around p-5 mobile:w-full mobile:flex-col mobile:justify-normal laptop:w-[80%]">
           <div className="w-[40%] mobile:w-full">
             <CarouselThump
               img={posts.img}
@@ -112,7 +112,7 @@ export default function DetailPage({ posts }: DetailPro) {
                     chosseSize(e ?? '')
                   }}
                   className={cx(
-                    'mr-3 w-1/6 mobile:w-2/6',
+                    'mr-3 w-1/6 mobile:w-2/6 laptop:w-[25%]',
                     classes.rootSelectSize
                   )}
                 />

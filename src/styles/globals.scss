@@ -214,6 +214,9 @@
 .Logo-top-header {
   width: 20%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media (min-width: 640px) and (max-width: 1279px) {
     width: 30%;
   }
