@@ -7,6 +7,7 @@ import React, { useContext } from 'react'
 import CartItem from '@/components/CartItem/CartItem'
 import type { CartType } from '@/constant/types/typeCart'
 import { CartContext } from '@/Provider/CartProvider'
+import { customToLocaleString } from '@/utils/fommatPrice'
 
 import { useStyles } from './CartPageStyle'
 
@@ -51,7 +52,7 @@ export default function CartPage() {
                 <div className="mt-5 flex justify-between">
                   <Text className="text-[16px]">Subtotal</Text>
                   <Text className="text-[16px] font-bold">
-                    {context?.priceAllProduct.toLocaleString()}
+                    {customToLocaleString(context?.priceAllProduct)}
                     VND
                   </Text>
                 </div>
@@ -68,7 +69,7 @@ export default function CartPage() {
               <div className="my-4">
                 <Text className="text-[24px] font-semibold">Total</Text>
                 <Text className="text-[24px] font-semibold">
-                  {context?.priceAllProduct.toLocaleString()}
+                  {customToLocaleString(context?.priceAllProduct)}
                   VND
                 </Text>
               </div>

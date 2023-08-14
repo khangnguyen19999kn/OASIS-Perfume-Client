@@ -10,6 +10,7 @@ import { commentMock } from '@/constant/mock/CommentMock'
 import { detailProductMock } from '@/constant/mock/DetailProductMock'
 import type { TCommnentProps } from '@/constant/types/typeComment'
 import type { DetailPro } from '@/constant/types/typeProduct'
+import { customToLocaleString } from '@/utils/fommatPrice'
 
 import { useStyles } from './style'
 
@@ -19,7 +20,9 @@ export default function DetailPage({ posts }: DetailPro) {
   const { classes, cx } = useStyles()
   const [active, setActive] = useState(0)
   const [price, setPrice] = useState(
-    `${posts.priceFor10ml.toLocaleString()}đ- ${posts.priceForFull.toLocaleString()}đ`
+    `${customToLocaleString(posts.priceFor10ml)}đ- ${customToLocaleString(
+      posts.priceForFull
+    )}đ`
   )
   const [size, setSize] = useState('')
   const [quantity, setQuantity] = useState('1')
@@ -53,10 +56,10 @@ export default function DetailPage({ posts }: DetailPro) {
   const chosseSize = (sizeCheck: string) => {
     if (sizeCheck === '10ml') {
       setSize('10ml')
-      setPrice(`${posts.priceFor10ml.toLocaleString()}đ`)
+      setPrice(`${customToLocaleString(posts.priceFor10ml)}đ`)
     } else {
       setSize('100ml')
-      setPrice(`${posts.priceForFull.toLocaleString()}đ`)
+      setPrice(`${customToLocaleString(posts.priceForFull)}đ`)
     }
   }
   const showComment = () => {

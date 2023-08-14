@@ -4,6 +4,7 @@ import React, { useContext } from 'react'
 
 import type { CartType } from '@/constant/types/typeCart'
 import { CartContext } from '@/Provider/CartProvider'
+import { customToLocaleString } from '@/utils/fommatPrice'
 
 import QuantityItem from '../QuantityItem/QuantityItem'
 import { useStyles } from './CartItemStyle'
@@ -44,11 +45,11 @@ export default function CartItem({ size, price, id, name, img }: CartType) {
             <QuantityItem id={id} />
           </div>
           <h2 className="block mobile:hidden">
-            {priceWithoutCommaAndSymbol.toLocaleString()}
+            {customToLocaleString(priceWithoutCommaAndSymbol)}
             VNĐ
           </h2>
           <h2>
-            {priceTotalItem.toLocaleString()}
+            {customToLocaleString(priceTotalItem)}
             VNĐ
           </h2>
         </div>

@@ -88,7 +88,7 @@ export default function App({ Component, pageProps }: AppProps) {
             >
               <Component {...pageProps} />
             </div>
-            <div className="sticky bottom-5 z-10 float-right mr-[60px] w-[fit-content] rounded  bg-[#cce6e5] mobile:visible laptop:invisible desktop:invisible">
+            <div className="sticky bottom-5 z-10 float-right mr-[20px] w-[fit-content] rounded  bg-[#cce6e5] mobile:visible laptop:invisible desktop:invisible">
               <ShoppingCart />
             </div>
 

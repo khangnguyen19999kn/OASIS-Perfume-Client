@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 
 import type { TypeOfData } from '@/constant/types/typeProduct'
+import { customToLocaleString } from '@/utils/fommatPrice'
 
 import ButtonAddToCart from '../ButtonAddToCart'
 import { useStyles } from './styleCardItemVer2'
@@ -23,7 +24,9 @@ export default function CardItemVer2({ posts }: { posts: TypeOfData }) {
     'Một chai nước hoa tinh tế và nam tính, kết hợp sự mạnh mẽ của gỗ đàn hương và đậm đà của hoa cỏ, tạo nên một hương thơm quyến rũ và cuốn hút cho phái mạnh'
 
   const fluctuatingPrice = (priceFirst: string, priceLast: string) => {
-    const result = `${priceFirst.toLocaleString()}đ - ${priceLast.toLocaleString()}đ`
+    const result = `${customToLocaleString(
+      priceFirst
+    )}đ - ${customToLocaleString(priceLast)}đ`
     return result
   }
 
