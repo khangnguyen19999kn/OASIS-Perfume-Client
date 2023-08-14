@@ -1,37 +1,15 @@
-import { createStyles, keyframes } from '@mantine/core'
+import { createStyles } from '@mantine/core'
+
+import {
+  animationContent,
+  slide1Ipad,
+  slideIn1Screen1279x1919,
+  slideIn1Screen1920,
+  slideIn2
+} from './animation'
 
 const img1 = '../../assets/imageCarousel/home2-slide1-bg.jpg'
 const img2 = '../../assets/imageCarousel/home2-slide2-bg.jpg'
-const slideIn2 = keyframes({
-  '0%': {
-    opacity: 0,
-    right: '-100px'
-  },
-  '100%': {
-    opacity: 1,
-    right: '0'
-  }
-})
-const slideIn1 = keyframes({
-  '0%': {
-    opacity: 0,
-    left: '0%'
-  },
-  '100%': {
-    opacity: 1,
-    left: '5%'
-  }
-})
-const animationContent = keyframes({
-  '0%': {
-    opacity: 0,
-    top: '45%'
-  },
-  '100%': {
-    opacity: 1,
-    top: '30%'
-  }
-})
 
 export const useStyles = createStyles(() => ({
   slide1: {
@@ -84,23 +62,26 @@ export const useStyles = createStyles(() => ({
   },
   grpImgSlide1: {
     '@media (min-width: 640px)': {
-      animation: `${slideIn1} 2s ease-in-out`
+      animation: `${slideIn1Screen1279x1919} 2s ease-in-out`
     },
     position: 'absolute',
     bottom: '0',
     left: '5%',
     width: '800px',
     height: '700px',
+    transition: 'all 0.5s ease-in-out',
     '@media (min-width: 640px) and (max-width: 1279px)': {
       height: '300px',
       width: '300px',
-      left: '0'
+      left: '0',
+      animation: `${slide1Ipad} 2s ease-in-out`
     },
     '@media (min-width: 1279px) and (max-width: 1919px)': {
       left: '-15%'
     },
     '@media (min-width: 1920px)': {
-      left: '-20%'
+      left: '0%',
+      animation: `${slideIn1Screen1920} 2s ease-in-out`
     }
   },
   grpImgSlide2: {
@@ -119,12 +100,12 @@ export const useStyles = createStyles(() => ({
     }
   },
   grpContentSlide1: {
-    '@media (min-width: 1280px)': {
+    '@media (min-width: 640px)': {
       animation: `${animationContent} 2s ease-in-out`
     }
   },
   grpContentSlide2: {
-    '@media (min-width: 1280px)': {
+    '@media (min-width: 640px)': {
       animation: `${animationContent} 2s ease-in-out`
     }
   }

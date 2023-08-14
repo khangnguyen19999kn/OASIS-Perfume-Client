@@ -58,7 +58,7 @@ export default function CarouselComponet() {
             <div
               className={cx(
                 activeSlide === 0 ? classes.grpContentSlide1 : '',
-                'absolute left-[40%] top-[30%] tablet:w-[500px] w-[650px] mobile:w-full mobile:top-[10px] mobile:left-[15px] p-3 mobile:z-10'
+                'absolute left-[45%] top-[35%] tablet:w-[500px] w-[650px] mobile:w-full mobile:top-[10px] mobile:left-[15px] p-3 mobile:z-10'
               )}
             >
               <div>
@@ -101,7 +101,7 @@ export default function CarouselComponet() {
             <div
               className={cx(
                 activeSlide === 1 ? classes.grpContentSlide2 : '',
-                'absolute laptop:left-[10%] laptop:top-[35%] left-[40%] top-[25%] tablet:w-[500px] w-[650px] mobile:w-full mobile:top-[10px] mobile:left-[15px] p-3 mobile:z-10 bigDesktop:left-[25%] bigDesktop:top-[30%]'
+                'absolute laptop:left-[10%] laptop:top-[35%] left-[40%] top-[35%] tablet:w-[500px] w-[650px] mobile:w-full mobile:top-[10px] mobile:left-[15px] p-3 mobile:z-10 bigDesktop:left-[25%] '
               )}
             >
               <div>
