@@ -18,7 +18,8 @@ export const useStyles = createStyles(() => ({
       }
     },
     [`&:hover .${getStylesRef('description')}`]: {
-      display: 'block',
+      display: '-webkit-box',
+      WebkitLineClamp: 6,
       '@media (max-width: 639px)': {
         display: '-webkit-box',
         WebkitLineClamp: 3

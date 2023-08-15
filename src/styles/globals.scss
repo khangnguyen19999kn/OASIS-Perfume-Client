@@ -143,7 +143,7 @@
   }
   .respon-logo {
     display: block;
-    width: 80%;
+    width: 50%;
     text-align: center;
   }
   .topnav {
@@ -384,12 +384,12 @@
   .container,
   .tiite-list-new-pro,
   .content-list-new-pro {
-    width: 75%;
+    width: 70%;
   }
 }
 
 /* Smartphones (landscape) ----------- */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .container,
   .tiite-list-new-pro,
   .content-list-new-pro {

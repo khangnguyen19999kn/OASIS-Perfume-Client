@@ -5,17 +5,24 @@ import React, { useEffect, useRef } from 'react'
 import type { NewProcProps, TypeOfData } from '@/constant/types/typeProduct'
 
 import CardItemVer2 from '../CardItemVer2/CardItemVer2'
+import { useStyles } from './ProductGridVirtualListStyle'
 
 function ProductGridVirtualList({ posts }: NewProcProps) {
+  const { classes } = useStyles()
   const chunkedArray = (array: TypeOfData[], size: number) => {
     return Array.from({ length: Math.ceil(array.length / size) }, (_, i) =>
       array.slice(i * size, i * size + size)
     )
   }
   const { width } = useViewportSize()
+  const checkWidth = () => {
+    if (width >= 1280 && width < 1920) return 4
+    if (width >= 1920) return 5
+    return 2
+  }
 
   const twoDimensionalArray: TypeOfData[][] =
-    chunkedArray(posts, width < 1920 ? 4 : 5) ?? []
+    chunkedArray(posts, checkWidth()) ?? []
 
   const parentRef = useRef<HTMLDivElement | null>(null)
   const parentOffsetRef = useRef(0)
@@ -54,17 +61,14 @@ function ProductGridVirtualList({ posts }: NewProcProps) {
               data-index={row.index}
               ref={virtualizer.measureElement}
               style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
                 transform: `translateY(${
                   row.start -
                   virtualizer.options.scrollMargin +
                   (row.index === 0 ? 0 : 10 * row.index)
                 }px)`,
-                display: 'flex',
-                gap: 10
+                display: 'flex'
               }}
+              className={classes.listItem}
             >
               {columnItems.map(column => {
                 const rowData = twoDimensionalArray[row.index]

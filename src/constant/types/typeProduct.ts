@@ -10,6 +10,7 @@ export type TypeOfData = {
   priceFor10ml: string
   priceForFull: string
   averageRate: number
+  introduce: string
 }
 
 export type NewProcProps = {

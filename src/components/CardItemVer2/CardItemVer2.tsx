@@ -18,10 +18,8 @@ export default function CardItemVer2({ posts }: { posts: TypeOfData }) {
       </div>
     )
   }
-  const { id, name, priceFor10ml, priceForFull, img, averageRate } = posts
-
-  const mainDescription =
-    'Một chai nước hoa tinh tế và nam tính, kết hợp sự mạnh mẽ của gỗ đàn hương và đậm đà của hoa cỏ, tạo nên một hương thơm quyến rũ và cuốn hút cho phái mạnh'
+  const { id, name, priceFor10ml, priceForFull, img, averageRate, introduce } =
+    posts
 
   const fluctuatingPrice = (priceFirst: string, priceLast: string) => {
     const result = `${customToLocaleString(
@@ -38,7 +36,9 @@ export default function CardItemVer2({ posts }: { posts: TypeOfData }) {
         </div>
         <div className={classes.Infomation}>
           <Text className={classes.textName}>{name}</Text>
-          <Text className={classes.textDescription}>{mainDescription}</Text>
+          <Text className={classes.textDescription}>
+            {introduce || 'Chưa có thông tin'}
+          </Text>
           <Text className={classes.price}>
             {fluctuatingPrice(priceFor10ml, priceForFull)}
           </Text>

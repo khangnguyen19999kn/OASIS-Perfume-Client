@@ -59,7 +59,7 @@ export default function StorePage({ posts, brands, type }: StorePageProps) {
     handleChangeSelect(value.brand, value.concentration)
   }, [value])
   const checkSizeAndDeviceToRender = () => {
-    if (width > 768 && list.length > 5) {
+    if (width >= 768 && list.length > 5) {
       return <ProductGridVirtualList posts={list} />
     }
     if (list.length === 0) {
@@ -83,12 +83,12 @@ export default function StorePage({ posts, brands, type }: StorePageProps) {
   return (
     <>
       <div>
-        <div className="mb-5 flex flex-row mobile:ml-2">
+        <div className="mb-5 flex flex-row mobile:ml-2 tablet:ml-10">
           <h3 className="mr-1 font-medium">Trang Chủ</h3>
           <h3>/</h3>
           <h3 className="ml-1 font-medium">{checkTitle()}</h3>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row tablet:ml-10">
           <Select
             placeholder="Chọn thương hiệu"
             style={{ marginRight: '10px' }}

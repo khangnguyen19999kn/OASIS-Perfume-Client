@@ -16,7 +16,7 @@ export default function ListItem({ posts }: NewProcProps) {
   }
 
   return (
-    <div className="flex w-full flex-wrap gap-2  mobile:flex-col mobile:items-center">
+    <div className="flex w-full flex-wrap justify-center gap-2 mobile:flex-col mobile:items-center">
       {showItem()}
     </div>
   )
