@@ -39,7 +39,7 @@ export default function DetailPage({ posts }: DetailPro) {
       return (
         <Panel
           className={cx('border-t-transparent font-medium', classes.titlePanel)}
-          header={<Text className={classes.titlePanel}>{item.tittle}</Text>}
+          header={<Text className={classes.titlePanel}>{item.title}</Text>}
           key={item.id}
           style={{ borderRadius: 0 }}
         >
@@ -139,7 +139,7 @@ export default function DetailPage({ posts }: DetailPro) {
                 />
               </div>
               <Text className="mb-5 text-center ">
-                Complimentary shipping on all orders
+                Miễn ship trên tất cả các đơn hàng
               </Text>
               <Collapse
                 ghost={true}

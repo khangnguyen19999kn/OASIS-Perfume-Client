@@ -27,7 +27,7 @@ export default function Comment({
         <Text className="mb-5 font-bold">{title}</Text>
         <div className="flex justify-between mobile:flex-col">
           <Text className="w-[80%] mobile:w-full">{content}</Text>
-          <div className="w-[20%] px-8 mobile:mt-5 mobile:w-full mobile:px-0">
+          <div className="w-[20%] px-8 mobile:mt-5 mobile:w-full mobile:px-0 laptop:px-2">
             <div className="flex">
               <Text>Submited &nbsp;</Text>
               <Text className="font-medium">{date}</Text>

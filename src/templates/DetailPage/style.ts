@@ -66,6 +66,9 @@ export const useStyles = createStyles(theme => ({
     padding: '20px',
     '@media (max-width: 639px)': {
       width: '100%'
+    },
+    '@media (min-width: 1279px) and (max-width: 1919px)': {
+      width: '80%'
     }
   },
   titlePanel: {
