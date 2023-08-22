@@ -31,6 +31,7 @@ export default function Navbar({ tog, setTog }: ActiveResponsive) {
       } else if (deltaY < 0) {
         if (ref.current) {
           ref.current.classList.remove('hidden')
+
           ref.current.classList.add('full-Nav')
         }
       }
