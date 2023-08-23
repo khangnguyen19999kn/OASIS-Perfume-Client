@@ -9,6 +9,8 @@ export type TypeOfData = {
   concentration: string
   priceFor10ml: string
   priceForFull: string
+  ingredient: string
+  note: string
   averageRate: number
   introduce: string
 }

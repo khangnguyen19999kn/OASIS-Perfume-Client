@@ -7,7 +7,6 @@ import ButtonAddToCart from '@/components/ButtonAddToCart'
 import CarouselThump from '@/components/CarouselThump'
 import Comment from '@/components/Comment/Comment'
 import { commentMock } from '@/constant/mock/CommentMock'
-import { detailProductMock } from '@/constant/mock/DetailProductMock'
 import type { TCommnentProps } from '@/constant/types/typeComment'
 import type { DetailPro } from '@/constant/types/typeProduct'
 import { customToLocaleString } from '@/utils/fommatPrice'
@@ -34,8 +33,26 @@ export default function DetailPage({ posts }: DetailPro) {
     return result
   }
   const dataQuantity = showQuantity()
+  const detailProduct = [
+    {
+      id: 1,
+      title: 'Các nốt hương & Mô tả',
+      content: posts.note
+    },
+    {
+      id: 2,
+      title: 'Thành phần',
+      content: posts.ingredient
+    },
+    {
+      id: 3,
+      title: 'Phương thức vận chuyển và đổi trả',
+      content:
+        '<div>-Hỗ trợ vận chuyển miễn phí</div><br/><div>-Miễn phí đổi trả trong vòng 30 ngày nếu có lỗi của nhà sản xuất</div>'
+    }
+  ]
   const showColapse = () => {
-    return detailProductMock.map(item => {
+    return detailProduct.map(item => {
       return (
         <Panel
           className={cx('border-t-transparent font-medium', classes.titlePanel)}
