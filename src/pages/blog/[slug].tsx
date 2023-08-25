@@ -1,6 +1,7 @@
 import type { GetStaticPaths } from 'next'
 import React from 'react'
 
+import { API_BLOG, API_BLOG_SLUG } from '@/constant/API/API'
 import type { TypeBlogDetail } from '@/constant/types/typeBlog'
 import BeautyBlogPage from '@/templates/BeautyBlogPage/BeautyBlogPage'
 
@@ -12,9 +13,7 @@ export default function index({ blog }: TypeBlogDetail) {
   )
 }
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(
-    `https://server-oasis-perfume.onrender.com/api/v1/blog/`
-  )
+  const res = await fetch(API_BLOG)
 
   const posts = await res.json()
 
@@ -27,9 +26,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export async function getStaticProps({ params }: any) {
   const { slug } = params
-  const res = await fetch(
-    `https://server-oasis-perfume.onrender.com/api/v1/blog/slug/${slug}`
-  )
+  const res = await fetch(`${API_BLOG_SLUG}${slug}`)
   const blog = await res.json()
   return {
     props: {

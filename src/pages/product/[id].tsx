@@ -1,6 +1,7 @@
 import type { GetStaticPaths } from 'next'
 import Head from 'next/head'
 
+import { API_PRODUCT } from '@/constant/API/API'
 import type { DetailPro } from '@/constant/types/typeProduct'
 import DetailPage from '@/templates/DetailPage/DetailPage'
 
@@ -19,9 +20,7 @@ export default function App({ posts }: DetailPro) {
   )
 }
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(
-    `https://server-oasis-perfume.onrender.com/api/v1/product/`
-  )
+  const res = await fetch(API_PRODUCT)
 
   const posts = await res.json()
 
@@ -34,9 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export async function getStaticProps({ params }: any) {
   const { id } = params
-  const res = await fetch(
-    `https://server-oasis-perfume.onrender.com/api/v1/product/${id}`
-  )
+  const res = await fetch(`${API_PRODUCT}${id}`)
   const posts = await res.json()
 
   return {

@@ -1,16 +1,16 @@
 import { DownOutlined, RightOutlined } from '@ant-design/icons'
 import { Button, Select, Text } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { Collapse, Rate } from 'antd'
 import React, { useState } from 'react'
 
 import ButtonAddToCart from '@/components/ButtonAddToCart'
 import CarouselThump from '@/components/CarouselThump'
 import Comment from '@/components/Comment/Comment'
-import { commentMock } from '@/constant/mock/CommentMock'
-import type { TCommnentProps } from '@/constant/types/typeComment'
-import type { DetailPro } from '@/constant/types/typeProduct'
+import type { DetailPro, TypeOfReview } from '@/constant/types/typeProduct'
 import { customToLocaleString } from '@/utils/fommatPrice'
 
+import ModalWriteReview from './ModalWriteReview/ModalWriteReview'
 import { useStyles } from './style'
 
 const { Panel } = Collapse
@@ -25,6 +25,7 @@ export default function DetailPage({ posts }: DetailPro) {
   )
   const [size, setSize] = useState('')
   const [quantity, setQuantity] = useState('1')
+
   const showQuantity = () => {
     const result = []
     for (let i = 1; i <= 5; i += 1) {
@@ -80,24 +81,31 @@ export default function DetailPage({ posts }: DetailPro) {
     }
   }
   const showComment = () => {
-    return commentMock.map(
-      ({ title, content, date, rate, author, from }: TCommnentProps) => {
-        return (
+    const reviewShow = posts.reviews.filter(item => item.isVerify === true)
+    if (reviewShow.length === 0) {
+      return <div className="text-center font-semibold">Chưa có review nào</div>
+    }
+    return reviewShow.map((item: TypeOfReview, index) => {
+      return (
+        <div key={index}>
           <Comment
-            key={title}
-            title={title}
-            content={content}
-            date={date}
-            rate={rate}
-            author={author}
-            from={from}
+            rate={item.rate}
+            comment={item.comment}
+            name={item.name}
+            createdAt={item.createdAt}
           />
-        )
-      }
-    )
+        </div>
+      )
+    })
   }
+  const [opened, { open, close }] = useDisclosure(false)
   return (
     <>
+      <ModalWriteReview
+        opened={opened}
+        onClose={close}
+        title="WRITE A REVIEW"
+      />
       <div className="flex items-center justify-center">
         <div className="flex w-[50%] justify-around p-5 mobile:w-full mobile:flex-col mobile:justify-normal laptop:w-[80%]">
           <div className="w-[40%] mobile:w-full">
@@ -109,7 +117,6 @@ export default function DetailPage({ posts }: DetailPro) {
           </div>
           <div className="flex w-[50%] justify-center mobile:w-full ">
             <div className="w-[90%] py-5 mobile:my-5 mobile:w-full mobile:py-0">
-              {' '}
               <h1 className={classes.tittleNameDetail}>{posts.name}</h1>
               <Rate
                 allowHalf={true}
@@ -191,11 +198,20 @@ export default function DetailPage({ posts }: DetailPro) {
           <h1>RATINGS & REVIEWS</h1>
           <div className="mb-10 flex justify-between p-3 mobile:flex-col mobile:p-0">
             <div className="flex items-center mobile:mb-2">
-              <Rate value={5} disabled={true} className="mb-3" />
+              <Rate
+                value={posts.averageRate}
+                disabled={true}
+                className="mb-3"
+              />
               <Text className="ml-5">Số REVIEWS</Text>
             </div>
             <div>
-              <Button className={classes.buttonWriteReview}>
+              <Button
+                className={classes.buttonWriteReview}
+                onClick={() => {
+                  open()
+                }}
+              >
                 <Text>WRITE A REVIEW</Text>
               </Button>
             </div>

@@ -15,6 +15,7 @@ import axios from 'axios'
 import React, { useContext, useEffect } from 'react'
 
 import CartItem from '@/components/CartItem/CartItem'
+import { API_ORDER } from '@/constant/API/API'
 import listCity from '@/constant/JSON/cities.json'
 import listDistrict from '@/constant/JSON/districts.json'
 import listWards from '@/constant/JSON/wards.json'
@@ -144,7 +145,7 @@ export default function CheckOutPage() {
   }, [context!.listProductInLocalStorage])
   const submitForm = () => {
     axios
-      .post('https://server-oasis-perfume.onrender.com/api/v1/order', {
+      .post(API_ORDER, {
         ...form.values
       })
       .then(res => {
@@ -159,7 +160,7 @@ export default function CheckOutPage() {
   }
   const verifyPhone = () => {
     axios
-      .put('https://server-oasis-perfume.onrender.com/api/v1/order/verify/', {
+      .put(API_ORDER, {
         id: data?.id,
         otp: formVerify.values.otp
       })

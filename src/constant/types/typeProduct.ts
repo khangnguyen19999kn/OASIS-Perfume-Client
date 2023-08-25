@@ -13,6 +13,16 @@ export type TypeOfData = {
   note: string
   averageRate: number
   introduce: string
+  reviews: TypeOfReview[]
+}
+export type TypeOfReview = {
+  email: string
+  comment: string
+  verifyCode: string
+  isVerify: boolean
+  rate: number
+  createdAt: Date
+  name: string
 }
 
 export type NewProcProps = {

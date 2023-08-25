@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 
 import NomalList from '@/components/NormalList/NomalList'
 import ProductGridVirtualList from '@/components/ProductGridVirtualList/ProductGridVirtualList'
+import { API_PRODUCT_CONCENTRATION } from '@/constant/API/API'
 import type { TypeOfData } from '@/constant/types/typeProduct'
 
 const useStyles = createStyles(() => ({
@@ -44,9 +45,9 @@ export default function StorePage({ posts, brands, type }: StorePageProps) {
   const handleChangeSelect = async (brand?: string, concentration?: string) => {
     try {
       const response = await axios.get(
-        `https://server-oasis-perfume.onrender.com/api/v1/product/sort/concentration?concentration=${
-          concentration || ''
-        }&brand=${brand || ''}&type=${value.type || ''}`
+        `${API_PRODUCT_CONCENTRATION}${concentration || ''}&brand=${
+          brand || ''
+        }&type=${value.type || ''}`
       )
       setList(response.data)
     } catch (error) {

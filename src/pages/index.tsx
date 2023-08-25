@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 
+import { API_BLOG, API_FAVORITE_PRODUCT } from '@/constant/API/API'
 import type { NewProBlogProps } from '@/constant/types/typeProduct'
 import HomePage from '@/templates/HomePage'
 
@@ -21,8 +22,8 @@ export default function index({ posts, blog }: NewProBlogProps) {
 }
 export async function getStaticProps() {
   const [myDataRes, otherDataRes] = await Promise.all([
-    fetch('https://server-oasis-perfume.onrender.com/api/v1/product/favorite'),
-    fetch('https://server-oasis-perfume.onrender.com/api/v1/blog/')
+    fetch(API_FAVORITE_PRODUCT),
+    fetch(API_BLOG)
   ])
 
   const [posts, blog] = await Promise.all([

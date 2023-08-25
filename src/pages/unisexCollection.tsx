@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 
+import { API_BRANDS, API_PRODUCT_UNISEX_COLLECTION } from '@/constant/API/API'
 import type { StorePageProps } from '@/templates/StorePage/StorePage'
 import StorePage from '@/templates/StorePage/StorePage'
 
@@ -21,10 +22,8 @@ export default function unisexCollection({ posts, brands }: StorePageProps) {
 }
 export async function getStaticProps() {
   const [myDataRes, otherDataRes] = await Promise.all([
-    fetch(
-      'https://server-oasis-perfume.onrender.com/api/v1/product/collection/unisex'
-    ),
-    fetch('https://server-oasis-perfume.onrender.com/api/v1/brand/')
+    fetch(API_PRODUCT_UNISEX_COLLECTION),
+    fetch(API_BRANDS)
   ])
 
   const [posts, brands] = await Promise.all([

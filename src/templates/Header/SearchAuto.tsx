@@ -12,6 +12,7 @@ import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
+import { API_PRODUCT_NAME } from '@/constant/API/API'
 import { useTruncateString } from '@/constant/hook/useTruncateString'
 import IconSearch from '@/constant/icons/IconSearch'
 import type { TypeOfData } from '@/constant/types/typeProduct'
@@ -58,9 +59,7 @@ export default function SearchAuto() {
   const handleSearch = async () => {
     try {
       if (debounced.length > 0) {
-        const response = await axios.get(
-          `https://server-oasis-perfume.onrender.com/api/v1/product/sort/name?name=${debounced}`
-        )
+        const response = await axios.get(`${API_PRODUCT_NAME}${debounced}`)
         const listSuggestions = response.data.map((item: TypeOfData) => {
           return {
             id: item.id,
