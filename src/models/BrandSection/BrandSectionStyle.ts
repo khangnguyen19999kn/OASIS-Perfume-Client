@@ -4,7 +4,7 @@ export const useStyles = createStyles(() => ({
   containerBrandSection: {
     width: '100%',
     height: '300px',
-    backgroundImage: "url('./assets/imageGlobal/home2-bg-10.jpg')",
+    backgroundImage: "url('../assets/imageGlobal/home2-bg-10.jpg')",
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
