@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang={AppConfig.locale}>
         <Head>
+          <link rel="icon" href="/favicon.ico" />
           <meta
             name="google-site-verification"
             content="jKTrEuutIxyNy0dq7aHAoP7r-8vMJxcyqLMnY7sG8ks"
