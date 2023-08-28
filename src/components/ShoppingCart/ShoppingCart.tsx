@@ -11,7 +11,7 @@ export default function ShoppingCart() {
   const { classes, cx } = useStyles()
   const context = useContext(CartContext)
   return (
-    <Link href="/cart" className="flex">
+    <Link href="/cart" className="flex" aria-label="Shopping cart">
       <Badge count={context?.totalItemInCart}>
         <Avatar
           shape="square"

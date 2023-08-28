@@ -55,7 +55,7 @@ export const useStyles = createStyles(() => ({
   },
   Infomation: {
     position: 'absolute',
-    height: '150px',
+    height: '35%',
     width: '100%',
     bottom: '0',
     left: '0',

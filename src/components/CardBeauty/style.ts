@@ -62,7 +62,7 @@ export const useStyles = createStyles(
       marginTop: '10px',
       lineHeight: '1.5em',
       fontWeight: 400,
-      fontFamily: '"Raleway", sans-serif',
+      fontFamily: '"Kurale", sans-serif',
       fontSize: '24px'
     }
   })

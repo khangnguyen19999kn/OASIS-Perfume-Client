@@ -24,7 +24,7 @@ export default function Banner({
         <div className={classes.grpContent}>
           <Text className={classes.title}>{title}</Text>
           <Text className={classes.textContent}>{textContent}</Text>
-          <ButtonBlob url={url} text="See more" />
+          <ButtonBlob url={url} text="See More" />
         </div>
         <div className={classes.banner}></div>
       </div>

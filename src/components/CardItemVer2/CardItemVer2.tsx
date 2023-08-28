@@ -1,5 +1,6 @@
-import { Image, Loader, Text } from '@mantine/core'
+import { Loader, Text } from '@mantine/core'
 import { Rate } from 'antd'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -32,7 +33,7 @@ export default function CardItemVer2({ posts }: { posts: TypeOfData }) {
     <Link href={`product/${id}`}>
       <div className={classes.container}>
         <div className={classes.wrapImage}>
-          <Image src={img[0]} alt="Image item" />
+          <Image width={250} height={250} src={img[0]} alt="Image item" />
         </div>
         <div className={classes.Infomation}>
           <Text className={classes.textName}>{name}</Text>

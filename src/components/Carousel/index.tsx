@@ -62,7 +62,7 @@ export default function CarouselComponet() {
               )}
             >
               <div>
-                <Text className="font-[Raleway, sans-serif] text-[64px] font-extralight leading-[18px] mobile:text-[24px] tablet:text-[40px]">
+                <Text className="font-[Kurale, sans-serif] text-[64px] font-extralight leading-[18px] mobile:text-[24px] tablet:text-[40px]">
                   Fragrance Journey
                 </Text>
               </div>
@@ -75,7 +75,7 @@ export default function CarouselComponet() {
                 </Text>
               </div>
               <div className="mt-5 mobile:mt-3">
-                <ButtonBlob url="#" text="See More" />
+                <ButtonBlob url="#" text="See more" />
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function CarouselComponet() {
               )}
             >
               <div>
-                <Text className="font-[Raleway, sans-serif] text-[64px] font-extralight leading-[18px] mobile:text-[24px]">
+                <Text className="font-[Kurale, sans-serif] text-[64px] font-extralight leading-[18px] mobile:text-[24px]">
                   For Your Charm
                 </Text>
               </div>
@@ -117,7 +117,7 @@ export default function CarouselComponet() {
                 </Text>
               </div>
               <div className="mt-5">
-                <ButtonBlob url="#" text="See More" />
+                <ButtonBlob url="#" text="See more" />
               </div>
             </div>
           </div>

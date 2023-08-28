@@ -37,7 +37,7 @@ export const useStyles = createStyles(() => ({
   subscribeTittle: {
     color: '#ffffff',
     fontWeight: 400,
-    fontFamily: '"Raleway", sans-serif',
+    fontFamily: '"Kurale", sans-serif',
     marginBottom: '20px'
   },
   inputsubcribe: {

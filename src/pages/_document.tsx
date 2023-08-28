@@ -14,6 +14,16 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="jKTrEuutIxyNy0dq7aHAoP7r-8vMJxcyqLMnY7sG8ks"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin={''}
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Raleway:ital,wght@1,300&display=swap"
+            rel="stylesheet"
+          />
 
           <Script
             id="gtm-script"

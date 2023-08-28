@@ -6,7 +6,7 @@ export const useStyles = createStyles(theme => ({
     lineHeight: '30px',
     fontWeight: 500,
     marginBottom: '15px',
-    fontFamily: "'Quentin', sans-serif",
+    fontFamily: "'Marck Script', sans-serif",
     '@media (max-width: 639px)': {
       fontSize: '40px'
     }

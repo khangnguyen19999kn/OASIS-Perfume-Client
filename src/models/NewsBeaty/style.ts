@@ -12,7 +12,7 @@ export const useStyles = createStyles(() => ({
     fontSize: '60px',
     fontWeight: 400,
     color: '#33999487',
-    fontFamily: "'Quentin', sans-serif",
+    fontFamily: "'Marck Script', sans-serif",
     '@media (max-width: 639px)': {
       fontSize: '45px'
     }
@@ -20,7 +20,7 @@ export const useStyles = createStyles(() => ({
   textContentTittle: {
     fontSize: '20px',
     fontWeight: 500,
-    fontFamily: "'Raleway', sans-serif",
+    fontFamily: "'Kurale', sans-serif",
     marginBottom: '20px'
   },
   textDecriptionTittle: {
