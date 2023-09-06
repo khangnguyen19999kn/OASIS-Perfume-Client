@@ -1,9 +1,14 @@
 import { createStyles, getStylesRef, keyframes } from '@mantine/core'
 
 const zoomInAnimation = keyframes({
-  '0%': { backgroundSize: 'cover' },
-  '1%': { backgroundSize: '110%' },
+  '0%': { backgroundSize: '100%' },
+  // '1%': { backgroundSize: '110%' },
   '100%': { backgroundSize: '120%' }
+})
+const zoomOutAnimation = keyframes({
+  '0%': { backgroundSize: '120%' },
+  // '99%': { backgroundSize: '101%' },
+  '100%': { backgroundSize: '100%' }
 })
 type BannerStyleParams = {
   backgroundUrl: string
@@ -19,8 +24,9 @@ export const useStyles = createStyles(
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       position: 'relative',
-      transition: 'transform 0.3s',
-      zIndex: 1
+      transition: 'all 0.3s ease',
+      zIndex: 1,
+      animation: `${zoomOutAnimation} 0.8s forwards`
     },
     wrapperBanner: {
       position: 'relative',
