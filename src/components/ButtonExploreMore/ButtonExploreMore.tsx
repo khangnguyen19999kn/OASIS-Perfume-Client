@@ -20,7 +20,7 @@ export default function ButtonExploreMore({ url }: { url: string }) {
               stroke="none"
               stroke-width="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
               <path
                 className="one"
