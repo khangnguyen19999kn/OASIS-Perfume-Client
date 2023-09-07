@@ -25,15 +25,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await res.json()
 
   const paths = posts.map((post: any) => ({
-    params: { id: post.id.toString() }
+    params: { slug: post.slug.toString() }
   }))
 
   return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }: any) {
-  const { id } = params
-  const res = await fetch(`${API_PRODUCT}${id}`)
+  const { slug } = params
+  const res = await fetch(`${API_PRODUCT}${slug}`)
   const posts = await res.json()
 
   return {

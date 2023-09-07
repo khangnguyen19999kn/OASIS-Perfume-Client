@@ -2,17 +2,17 @@ import { Text } from '@mantine/core'
 import React from 'react'
 
 import ButtonExploreMore from '@/components/ButtonExploreMore/ButtonExploreMore'
-import CardBeauty from '@/components/CardBeauty/CardBeauty'
+import CardBlogV2 from '@/components/CardBlogV2/CardBlogV2'
 import type { TypeBlogList } from '@/constant/types/typeBlog'
 
 import { useStyles } from './style'
 
-export default function NewsBeauty({ blog }: TypeBlogList) {
+export default function NewsBeauty({ blogs }: TypeBlogList) {
   const { classes } = useStyles()
   const showCardBeauty = () => {
-    return blog.map(item => {
-      return (
-        <CardBeauty
+    if (blogs && blogs.length > 0) {
+      return blogs.map(item => (
+        <CardBlogV2
           key={item.id}
           time={item.date}
           author={item.author}
@@ -20,9 +20,12 @@ export default function NewsBeauty({ blog }: TypeBlogList) {
           image={item.imgPosing}
           slug={item.slug}
         />
-      )
-    })
+      ))
+    }
+    // Handle the case where blogs is undefined or empty
+    return <p>No blogs to display</p>
   }
+
   return (
     <div>
       <div className={classes.grptittle}>
@@ -34,7 +37,7 @@ export default function NewsBeauty({ blog }: TypeBlogList) {
           {showCardBeauty()}
         </div>
         <div className="mt-[50px] ">
-          <ButtonExploreMore url="#" />
+          <ButtonExploreMore url="/blog" />
         </div>
       </div>
     </div>

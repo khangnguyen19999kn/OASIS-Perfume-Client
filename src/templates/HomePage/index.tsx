@@ -9,7 +9,7 @@ import NewsBeauty from '@/models/NewsBeaty/NewsBeauty'
 
 const img1 = '../../assets/banner/home2-banner-1.jpg'
 const img2 = '../../assets/banner/home2-banner-2.jpg'
-export default function HomePage({ posts, blog }: NewProBlogProps) {
+export default function HomePage({ posts, blogs }: NewProBlogProps) {
   return (
     <div>
       <CarouselComponet />
@@ -31,7 +31,7 @@ export default function HomePage({ posts, blog }: NewProBlogProps) {
         <BestSellsProduct posts={posts} />
       </div>
       <div className="mt-[100px]">
-        <NewsBeauty blog={blog} />
+        <NewsBeauty blogs={blogs} />
       </div>
       <div className="mt-[100px]">
         <BrandSection />

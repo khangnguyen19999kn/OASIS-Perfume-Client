@@ -19,8 +19,15 @@ export default function CardItemVer2({ posts }: { posts: TypeOfData }) {
       </div>
     )
   }
-  const { id, name, priceFor10ml, priceForFull, img, averageRate, introduce } =
-    posts
+  const {
+    name,
+    priceFor10ml,
+    priceForFull,
+    img,
+    averageRate,
+    introduce,
+    slug
+  } = posts
 
   const fluctuatingPrice = (priceFirst: string, priceLast: string) => {
     const result = `${customToLocaleString(
@@ -30,7 +37,7 @@ export default function CardItemVer2({ posts }: { posts: TypeOfData }) {
   }
 
   return (
-    <Link href={`product/${id}`}>
+    <Link href={`product/${slug}`}>
       <div className={classes.container}>
         <div className={classes.wrapImage}>
           <Image width={250} height={250} src={img[0]} alt="Image item" />

@@ -5,7 +5,7 @@ import { API_BLOG, API_FAVORITE_PRODUCT } from '@/constant/API/API'
 import type { NewProBlogProps } from '@/constant/types/typeProduct'
 import HomePage from '@/templates/HomePage'
 
-export default function index({ posts, blog }: NewProBlogProps) {
+export default function index({ posts, blogs }: NewProBlogProps) {
   return (
     <>
       <Head>
@@ -14,7 +14,7 @@ export default function index({ posts, blog }: NewProBlogProps) {
         <meta name="description" content="Fragrance" />
       </Head>
       <div>
-        <HomePage posts={posts} blog={blog} />
+        <HomePage posts={posts} blogs={blogs} />
       </div>
     </>
   )
@@ -25,13 +25,13 @@ export async function getStaticProps() {
     fetch(API_BLOG)
   ])
 
-  const [posts, blog] = await Promise.all([
+  const [posts, blogs] = await Promise.all([
     myDataRes.json(),
     otherDataRes.json()
   ])
 
   return {
-    props: { posts, blog },
+    props: { posts, blogs },
     revalidate: 60
   }
 }

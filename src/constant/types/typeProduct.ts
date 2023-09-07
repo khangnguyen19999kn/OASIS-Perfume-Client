@@ -14,6 +14,7 @@ export type TypeOfData = {
   averageRate: number
   introduce: string
   reviews: TypeOfReview[]
+  slug: string
 }
 export type TypeOfReview = {
   email: string
@@ -29,7 +30,7 @@ export type NewProcProps = {
   posts: TypeOfData[]
 }
 export type NewProBlogProps = {
-  blog: TypeBlog[]
+  blogs: TypeBlog[]
   posts: TypeOfData[]
 }
 export type DetailPro = {

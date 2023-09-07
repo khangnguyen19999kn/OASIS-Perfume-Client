@@ -11,5 +11,5 @@ export type TypeBlogDetail = {
   blog: TypeBlog
 }
 export type TypeBlogList = {
-  blog: TypeBlog[]
+  blogs: TypeBlog[]
 }
