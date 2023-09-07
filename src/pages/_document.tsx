@@ -29,6 +29,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Raleway:ital,wght@1,300&display=swap"
             rel="stylesheet"
           />
+          <meta
+            property="og:image"
+            content="https://oasisfragrance.shop/favicon.ico"
+          />
 
           <Script
             id="gtm-script"
