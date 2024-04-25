@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-import IconBook from '@/constant/icons/IconBook'
 import Logo from '@/public/assets/imageGlobal/LogoVer2.png'
 
 import type { ActiveResponsive } from '.'
@@ -60,12 +59,12 @@ export default function Navbar({ tog, setTog }: ActiveResponsive) {
     <div className={cx('full-Nav', classes.fullNav)} ref={ref}>
       <div className="relative flex w-1/6 justify-center mobile:hidden tablet:w-[10%]">
         <div onMouseDown={handleOpenSidebar}>
-          <IconBook
+          {/* <IconBook
             className={cx(
               'h-[30px] w-[30px] hover:fill-[#33c1ec]',
               classes.icon
             )}
-          />
+          /> */}
         </div>
         <div>
           <SideBar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />

@@ -7,7 +7,6 @@ import { notifications } from '@mantine/notifications'
 import { Rate } from 'antd'
 import axios from 'axios'
 import dynamic from 'next/dynamic'
-import { usePathname } from 'next/navigation'
 import React from 'react'
 
 import {
@@ -21,9 +20,12 @@ const SunEditor = dynamic(() => import('suneditor-react'), {
   ssr: false
 })
 
-export default function ModalWriteReview({ opened, onClose, title }: TModal) {
-  const pathname = usePathname()
-  const idProduct = pathname.split('/')[2]
+export default function ModalWriteReview({
+  opened,
+  onClose,
+  title,
+  id: idProduct
+}: TModal) {
   const [isErrorRate, setIsErrorRate] = React.useState(false)
   const [isErrorComment, setIsErrorComment] = React.useState(false)
   const [openedModalVerify, { open, close }] = useDisclosure(false)

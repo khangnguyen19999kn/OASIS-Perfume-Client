@@ -18,6 +18,7 @@ const { Panel } = Collapse
 export default function DetailPage({ posts }: DetailPro) {
   const { classes, cx } = useStyles()
   const [active, setActive] = useState(0)
+
   const [price, setPrice] = useState(
     `${customToLocaleString(posts.priceFor10ml)}đ- ${customToLocaleString(
       posts.priceForFull
@@ -105,6 +106,7 @@ export default function DetailPage({ posts }: DetailPro) {
         opened={opened}
         onClose={close}
         title="WRITE A REVIEW"
+        id={posts.id}
       />
       <div className="flex items-center justify-center">
         <div className="flex w-[50%] justify-around p-5 mobile:w-full mobile:flex-col mobile:justify-normal laptop:w-[80%]">

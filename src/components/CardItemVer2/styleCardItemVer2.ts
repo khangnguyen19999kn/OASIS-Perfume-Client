@@ -6,7 +6,7 @@ export const useStyles = createStyles(() => ({
     height: '400px',
     position: 'relative',
     cursor: 'pointer',
-    border: '1px solid #33999487',
+    // border: '1px solid #33999487',
     padding: '10px',
     borderRadius: '2px',
     boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
