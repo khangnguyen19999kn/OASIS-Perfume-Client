@@ -11,11 +11,14 @@ import SwitchToggle from './SwitchToggle'
 export default function TopHeader() {
   const { classes, cx } = useStyles()
   const [opened, { open, close }] = useDisclosure(false)
+  const handleCloseModalSearch = () => {
+    close()
+  }
   return (
     <div className="top-header">
       <Modal opened={opened} onClose={close} title="Tìm kiếm">
         <div className="Search-Top-side">
-          <SearchAuto />
+          <SearchAuto handleCloseModalSearch={handleCloseModalSearch} />
         </div>
       </Modal>
       <div className="mr-5 flex items-center justify-center">

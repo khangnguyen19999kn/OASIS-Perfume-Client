@@ -88,7 +88,7 @@ export default function Navbar({ tog, setTog }: ActiveResponsive) {
           <Image className="img-logo h-[100%] w-[100%]" src={Logo} alt="asd" />
         </Link>
         <span className="search-Side">
-          <SearchAuto />
+          <SearchAuto handleCloseModalSearch={whenSelectLink} />
         </span>
         <Link
           href="/"

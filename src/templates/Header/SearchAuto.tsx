@@ -23,13 +23,19 @@ interface ItemProps extends SelectItemProps {
   id: string
   name: string
   image: string
+  slug: string
+  handleCloseModalSearch: () => void
 }
 
 function AutoCompleteItem(props: ItemProps) {
   const truncatedText = useTruncateString(props.name, 20)
   return (
     <div className="mt-[10px] cursor-pointer">
-      <Link className="no-underline" href={`/product/${props.id}`}>
+      <Link
+        className="no-underline"
+        href={`/product/${props.slug}`}
+        onClick={props.handleCloseModalSearch}
+      >
         <Group>
           <Avatar size="xl" src={props.image} />
 
@@ -51,7 +57,11 @@ function AutoCompleteItem(props: ItemProps) {
   )
 }
 
-export default function SearchAuto() {
+export default function SearchAuto({
+  handleCloseModalSearch
+}: {
+  handleCloseModalSearch: () => void
+}) {
   const { classes } = useStyles()
   const [value, setValue] = useState('')
   const [debounced] = useDebouncedValue(value, 200)
@@ -65,7 +75,8 @@ export default function SearchAuto() {
             id: item.id,
             name: item.name,
             image: item.img[0],
-            value: item.name
+            value: item.name,
+            slug: item.slug
           }
         })
         setData(listSuggestions)
@@ -98,7 +109,12 @@ export default function SearchAuto() {
           data={data}
           zIndex={1000}
           // eslint-disable-next-line react/no-unstable-nested-components
-          itemComponent={item => <AutoCompleteItem {...item} />}
+          itemComponent={item => (
+            <AutoCompleteItem
+              {...item}
+              handleCloseModalSearch={handleCloseModalSearch}
+            />
+          )}
         />
       </div>
     </div>

@@ -101,7 +101,7 @@ export default function DetailPage({ posts }: DetailPro) {
   }
   const [opened, { open, close }] = useDisclosure(false)
   return (
-    <>
+    <div className="min-h-screen">
       <ModalWriteReview
         opened={opened}
         onClose={close}
@@ -195,7 +195,7 @@ export default function DetailPage({ posts }: DetailPro) {
         </div>
       </div>
       <hr className="my-10" />
-      <div className="flex w-full justify-center mobile:justify-normal">
+      <div className="flex h-full min-h-[500px] w-full justify-center mobile:justify-normal">
         <div className={classes.reviewSide}>
           <h1>RATINGS & REVIEWS</h1>
           <div className="mb-10 flex justify-between p-3 mobile:flex-col mobile:p-0">
@@ -221,6 +221,6 @@ export default function DetailPage({ posts }: DetailPro) {
           {showComment()}
         </div>
       </div>
-    </>
+    </div>
   )
 }
