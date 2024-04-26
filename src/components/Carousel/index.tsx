@@ -68,10 +68,10 @@ export default function CarouselComponet() {
               </div>
               <div className="mt-[45px] w-[fit-content] pl-3 text-[#616161] mobile:mt-4 mobile:w-full mobile:pl-0 tablet:mt-[20px] tablet:p-0">
                 <Text>
-                  Welcome to OASIS Fragrance, your ultimate destination for
-                  exquisite fragrances. Indulge in the world of scents and
-                  embark on a captivating fragrance journey through our wide
-                  range of perfumes.
+                  Chào mừng bạn đến với OASIS Fragrance, điểm đến cuối cùng của
+                  bạn cho những hương thơm tinh tế. Tham gia vào thế giới của
+                  mùi hương và bắt đầu cuộc hành trình hấp dẫn qua loạt nước hoa
+                  đa dạng của chúng tôi.
                 </Text>
               </div>
               <div className="mt-5 mobile:mt-3">
@@ -106,14 +106,13 @@ export default function CarouselComponet() {
             >
               <div>
                 <Text className="font-[Kurale, sans-serif] text-[64px] font-extralight leading-[18px] mobile:text-[24px]">
-                  For Your Charm
+                  For Your Perfume
                 </Text>
               </div>
               <div className="mt-[45px] w-2/3 pl-3 text-[#616161] mobile:mt-3 mobile:w-full mobile:pl-0 bigDesktop:text-[30px]">
                 <Text>
-                  Electric ray demoiselle squeaker unicorn fish Kafue pike bango
-                  temperate ocean-bass, yellow bass coffinfish yellowfin
-                  customers.
+                  Khám phá sự đa dạng và quyến rũ trong thế giới hương thơm tại
+                  OASIS Fragrance ngay hôm nay!
                 </Text>
               </div>
               <div className="mt-5">
